@@ -35,13 +35,19 @@
 
 
         <!-- Id service -->
-        <service android:name=".fcm.SquawkFirebaseInstanceIdService">
+        <service
+            android:name=".fcm.SquawkFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
+
         </service>
 
-        <!-- TODO (4) Add your new service here, with an intent filter for action
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id"/>
+
+        <!-- COMPLETED (4) Add your new service here, with an intent filter for action
         com.google.firebase.MESSAGING_EVENT -->
 
     </application>
